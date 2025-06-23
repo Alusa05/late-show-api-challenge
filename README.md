@@ -12,10 +12,22 @@ The project was developed by Lisa Alusa
 - Seeded Data
 - Postman Collection for API Testing
 
-## Folder Structure
-
-
-
 ## Setup Instructions
 1. Clone the repository
-git clone 
+git clone https://github.com/Alusa05/late-show-api-challenge
+cd late-show-api-challenge
+
+2. Install Dependencies
+pipenv install flask flask_sqlalchemy flask_migrate flask-jwt-extended psycopg2-binary
+pipenv shell
+
+3. PostgreSQL Setup
+Create a database using psql or pgAdmin:
+CREATE DATABASE late_show_db;
+
+4. Configure Environment
+Edit `server/config.py`:
+```python
+SQLALCHEMY_DATABASE_URI = "postgresql://<user>:<password>@localhost:5432/late_show_db"
+JWT_SECRET_KEY = "your-secret-key"
+
